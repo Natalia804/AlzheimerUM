@@ -29,37 +29,36 @@ if selected_section == "Wprowadzenie":
     # Wprowadzenie
     # Title and Description
     st.title("Projekt: zastosowanie wybranych metod klasyfikacyjnych")
-    st.write("Przemiot: Uczenie maszynowe")
-    st.write("Prowadząca Justyna Tora")
-    st.write("Autorki: Natalia Łyś, Zuzanna Deszcz")
+    st.write("###### `Przemiot`: Uczenie maszynowe")
+    st.write("###### `Prowadząca`: Justyna Tora")
+    st.write("###### `Autorki`: Natalia Łyś, Zuzanna Deszcz")
 
 
     # Tytuł aplikacji
-    st.title("Analiza Zbioru Danych: **Alzheimer Feature**")
-    st.header("Wprowadzenie")
+    st.header("Analiza Zbioru Danych: *Alzheimer Feature*")
+    st.write("#### Wprowadzenie")
     st.markdown("""
-    **Choroba Alzheimera (AD)** to najbardziej powszechna odmiana demencji. 
+    *Choroba Alzheimera (AD)* to najbardziej powszechna odmiana demencji. 
     W Europie choroba ta jest głównym skutkiem utraty samodzielności i upośledzenia osób starszych. 
-    Szacuje się ilość chorych na **10 milionów ludzi**, a według prognoz ta liczba może nawet wzrosnąć **dwukrotnie do 2023 roku**.
+    Szacuje się ilość chorych na *10 milionów ludzi*.
     """)
-    # Separator wizualny
-    st.markdown("---")
 
 elif selected_section == "Charakterystyka zbioru danych":
     # Charakterystyka zbioru danych
     st.title("Charakterystyka Zbioru Danych")
     st.markdown("""
-    Zbiór danych zawiera informacje medyczne, socjoekonomiczne oraz diagnozę demencji u pacjentów. 
+    Zbiór danych zawiera informacje medyczne, socjo-ekonomiczne oraz diagnozę demencji u pacjentów. 
     Dane te zostały zaczerpnięte z <a href="https://www.kaggle.com/datasets/brsdincer/alzheimer-features/data" target="_blank" style="color: #007BFF; font-weight: bold;">Kaggle</a>, bazując na badaniach wykorzystujących uczenie maszynowe do analizy demencji
     """, unsafe_allow_html=True)
 
     st.subheader("Zmienna objaśniana")
     st.markdown("""
     <span style="color: #1f77b4; font-weight: bold;">Group</span>: Diagnoza choroby:
-    - <span style="color: #2ca02c;">Demented</span>: Osoby zdiagnozowane z demencją.
-    - <span style="color: #ff7f0e;">Nondemented</span>: Osoby bez demencji.
-    - <span style="color: #d62728;">Converted</span>: Osoby, które po pewnym czasie zostały zaklasyfikowane jako zdrowe.
+    - <code style="color: #2ca02c;">Demented</code>: Osoby zdiagnozowane z demencją.
+    - <code style="color: #ff7f0e;">Nondemented</code>: Osoby bez demencji.
+    - <code style="color: #d62728;">Converted</code>: Osoby, które po pewnym czasie zostały zaklasyfikowane jako zdrowe.
     """, unsafe_allow_html=True)
+
 
     st.subheader("Zmienne objaśniające")
     st.markdown("""
@@ -81,7 +80,7 @@ elif selected_section == "Charakterystyka zbioru danych":
     st.header("Źródła Danych")
     st.markdown("""
     1. <a href="https://cordis.europa.eu/article/id/428863-mind-reading-software-finds-hidden-signs-of-dementia/pl" target="_blank" style="color: #007BFF; font-weight: bold;">Cordis.europa.eu</a>  
-    2. <a href="https://www.sciencedirect.com/science/article/pii/S2352914819300917?via%3Dihub" target="_blank" style="color: #007BFF; font-weight: bold;">ScienceDirect</a>  
+    2. <a href="https://www.sciencedirect.com/science/article/pii/S2352914819300917?via%3Dihub" target="_blank" style="color: #007BFF; font-weight: bold;">ScienceDirect - *Machine learning in medicine: Performance calculation of dementia prediction by support vector machines (SVM)*</a>  
     3. <a href="https://www.kaggle.com/datasets/brsdincer/alzheimer-features/data" target="_blank" style="color: #007BFF; font-weight: bold;">Kaggle Dataset</a>
     """, unsafe_allow_html=True)
 
@@ -170,10 +169,12 @@ elif selected_section == "Charakterystyka zbioru danych":
     st.markdown("""
     Liczba pacjentów z demencją w danych jest podobna. Tutaj proporcja jest zupełnie inna niż we
     wcześniejszym wykresie. Dane okazują się próbką niereprezentatywną, ponieważ aż **2/3
-    populacji dotkniętej chorobą Alzheimera to kobiety** ([źródło](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10097993/)), co nie odzwierciedla nasz zestaw danych.
+    populacji dotkniętej chorobą Alzheimera to kobiety** (1), co nie odzwierciedla nasz zestaw danych.
     Natomiast więcej jest obserwacji pacjentek żeńskich (**58%** to kobiety). Co ciekawe, wiąże się to
     między innymi z faktem, że objawy **AD rozwijają się z wiekiem**, natomiast mężczyźni zwykle
-    żyją mniej niż kobiety ([źródło](https://doi.org/10.1016/J.COMPPSYCH.2015.07.002)).
+    żyją mniej niż kobiety (2).\n
+    (1) [Castro-Aldrete L., *Sex and gender considerations in Alzheimer’s disease: The Women’s Brain Project contribution*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10097993/) \n
+    (2) [Sangha K., *Gender differences in risk factors for transition from mild cognitive impairment to Alzheimer’s disease: A CREDOS study*](https://doi.org/10.1016/J.COMPPSYCH.2015.07.002)
     """)
 
     # Macierz korelacji
@@ -352,7 +353,6 @@ elif selected_section == "Usuwanie braków i analiza outlierów":
 
     st.write("Ze względu na naturę medyczną problemu, zdecydowano się nie usuwać outlierów, ponieważ odzwierciedlają one ważne zjawiska dla delikatnych danych.")
 
-
 elif selected_section == "Dzielenie na zbiór uczący i testowy":
     st.title("Dzielenie na zbiór uczący i testowy")
 
@@ -437,7 +437,6 @@ elif selected_section == "Dzielenie na zbiór uczący i testowy":
     st.session_state.y_train = y_train
     st.session_state.y_test = y_test
     #st.success("Dane zostały zapisane do `session_state`.")
-
 
 elif selected_section == "Metody uczenia maszynowego":
     # Nagłówek sekcji
@@ -680,7 +679,7 @@ elif selected_section == "Metody uczenia maszynowego":
 
     st.subheader("1. Dokładność (Accuracy)")
     st.write("""
-    Wszystkie trzy modele osiągnęły tę samą dokładność wynoszącą 85,33%. Oznacza to, że 85,33% wszystkich diagnoz (zarówno pozytywnych, jak i negatywnych) zostało prawidłowo sklasyfikowanych, co wskazuje to na ogólną solidność modeli, ale dokładność sama w sobie nie wystarcza w przypadku niezbalansowanych zbiorów danych, ponieważ nie uwzględnia błędów w rozkładzie klas.
+    Wszystkie trzy modele osiągnęły tę samą dokładność wynoszącą 85,33%. Oznacza to, że 85,33% wszystkich diagnoz (zarówno pozytywnych, jak i negatywnych) zostało prawidłowo sklasyfikowanych, co wskazuje to na ogólną solidność modeli, ale dokładność sama w sobie nie wystarcza w przypadku niezbalansowanych zbiorów danych, z którymi mamy tutaj doczynienia.
     """)
 
     st.subheader("2. Precyzja (Precision)")
@@ -705,89 +704,70 @@ elif selected_section == "Metody uczenia maszynowego":
     2. **Drzewo Decyzyjne i SVM** osiągnęły bardzo podobne wyniki, szczególnie w kategoriach precyzji i F1-score, ale ich niższa czułość jest niepożądana w praktyce medycznej.
     """)
   
+    ## SHAP
 
-    # Wybór najlepszego modelu
-    chosen_model = best_rf_model  # Random Forest został wskazany jako najlepszy model
+    st.header("Analiza interpretowalności modelu Random Forest - wartości SHAP")
 
     # Tworzenie obiektu SHAP Explainer
-    explainer = shap.TreeExplainer(chosen_model)
+    # explainer = shap.TreeExplainer(chosen_model)
+    explainer = shap.KernelExplainer(best_rf_model.predict, X_train)
+    # Obliczanie wartości SHAP
     shap_values = explainer.shap_values(X_test)
 
-    # 1. Globalna analiza wpływu cech (Summary Plot)
-    st.header("Analiza interpretowalności modelu - wartości SHAP")
-    st.subheader("Globalny wpływ cech na predykcję")
-    fig, ax = plt.subplots(figsize=(10, 6))
-    shap.summary_plot(shap_values[1], X_test, plot_type="bar", show=False)
-    st.pyplot(fig)
+    # # Wykres force plot dla pierwszego przykładu
+    # st.subheader("Wykres force plotu")
+    # shap.force_plot(
+    #     explainer.expected_value, 
+    #     shap_values[0], 
+    #     X_test.iloc[0],
+    #     matplotlib=True
+    # )
+    # fig_force = plt.gcf()
+    # st.pyplot(fig_force)
 
-    st.write("""
-    Wykres powyżej pokazuje, które cechy mają największy wpływ na predykcje modelu Random Forest. Cechy te są uporządkowane według ich średniego bezwzględnego wpływu na wynik predykcji.
-    """)
 
-    
-    # Generowanie wykresów PDP dla kilku najważniejszych cech
-    st.subheader("Wykresy częściowej zależności (PDP)")
-    st.markdown("""
-    Wykresy częściowej zależności przedstawiają, jak zmiana wartości jednej cechy wpływa na prognozy modelu, przy założeniu, że inne cechy pozostają stałe.
-    """)
-
-    # Wybór najważniejszych cech na podstawie SHAP lub innej metody (np. feature_importances_)
-    important_features = X_test.columns[:3]  # Top 3 cechy
-
-    # Tworzenie wykresów PDP
-    fig, ax = plt.subplots(figsize=(12, 8))
-    PartialDependenceDisplay.from_estimator(
-        chosen_model, X_test, features=important_features, ax=ax
+    plt.clf() 
+    shap.summary_plot(
+        shap_values,      # shape (n_samples, n_features) = (75, 6)
+        X_test,
+        feature_names=X_test.columns,  # optional
+        show=False
     )
-    plt.tight_layout()
-    st.pyplot(fig)
+    st.pyplot(plt.gcf())
 
-    # 3. Analiza lokalna - wyjaśnianie indywidualnych predykcji
-    st.subheader("Analiza lokalna predykcji za pomocą wartości SHAP")
+
     st.write("""
-    Przykład wyjaśnienia jednej konkretnej predykcji przy użyciu wartości SHAP. Wartości te wskazują, które cechy wpłynęły na przypisanie danego przykładu do konkretnej klasy.
+    ### 1. `MMSE`
+    Czerwone punkty (wysokie MMSE) na lewo → obniżają przewidywanie. \n\n
+    Niebieskie (niskie MMSE) na prawo → zwiększają przewidywanie.
+
+    ### 2. `is_male`
+    Cecha binarna (0/1).  Bycie mężczyzną zwiększa przewidywanie tak samo symetrycznie jak bycie kobietą je obniża.
+
+    ### 3. `nWBV`
+    Duży rozrzut wartośc, co oznacza różnorodny (dodatni bądź ujemny) wpływ w zależności od obserwacji.
+
+    ### 4. `eTIV`
+    Przewaga punktów blisko zera, często z niewielkim wpływem, czasem lekko ujemnym.
+
+    ### 5. `SES`
+    Punkty przy zerze z drobnym ujemnym efektem, więc niewielkie znaczenie w porównaniu do MMSE czy nWBV.
+
+    #### **Podsumowanie**: 
+    Najsilniejsze efekty widać w przypadku MMSE i nWBV, a is_male, eTIV i SES mają zwykle mniejszy, bardziej zróżnicowany wpływ.
     """)
-
-    # Wybranie jednego przykładu do analizy
-    example_index = 0  # Możesz zmienić na dowolny indeks z X_test
-    example = X_test.iloc[example_index]
-
-    # Wykres wyjaśnienia dla jednego przykładu
-    fig, ax = plt.subplots(figsize=(10, 6))
-    shap.force_plot(
-        explainer.expected_value[1],
-        shap_values[1][example_index],
-        example,
-        matplotlib=True
-    )
-    st.pyplot(fig)
-
-    st.write(f"""
-    Dla przykładu z indeksem {example_index}, możemy zauważyć, które cechy najbardziej wpłynęły na wynik predykcji. Na wykresie pokazano cechy zwiększające (kolor czerwony) oraz zmniejszające (kolor niebieski) prawdopodobieństwo przypisania do klasy "Demented".
-    """)
-
-    # Podsumowanie
-    st.header("Podsumowanie interpretowalności")
-    st.write("""
-    1. Wartości SHAP pozwalają na zrozumienie zarówno globalnych, jak i lokalnych wpływów cech na predykcje modelu.
-    2. Wykresy częściowej zależności pomagają zrozumieć, jak kluczowe cechy wpływają na prognozy, co może być użyteczne w interpretacji klinicznej.
-    3. Dzięki analizie lokalnej możemy wyjaśniać indywidualne decyzje modelu, co jest istotne w kontekście zaufania i transparentności w zastosowaniach medycznych.
-    """)
-
-    
-    
+   
 elif selected_section == "Podsumowanie i wnioski":
 
     st.header("Podsumowanie i wnioski")
 
     st.markdown("""
     ### Kluczowe obserwacje:
-    - **Najlepszy model:** Na podstawie wyników analizy, model o najwyższym F1-score to Random Forest (lub inny w zależności od wyników).
-    - **Wpływ cech:** Analiza SHAP pokazała, że cechy takie jak `MMSE` oraz `nWBV` miały największy wpływ na przewidywania modelu.
-    - **Równowaga danych:** Zbiór niedo końca był dobrze zbilansowany.
+    - **Najlepszy model:** Na podstawie wyników analizy, model o najwyższym F1-score to Random Forest.
+    - **Wpływ cech:** Analiza SHAP pokazała, że cechy takie jak `MMSE` oraz `nWBV` miały największy wpływ na przewidywania modelu. Natomiast wpływ płci, statusu ekonomicznego również ma wpływ na ostateczne wyniki.
 
     ### Wnioski:
-    - Modele oparte na Random Forest i SVM oraz Drzewa deycyzyjne mogą być skuteczne w przewidywaniu demencji, ale najlepszy jest Random Forest.
+    - Modele oparte na Random Forest i SVM oraz Drzewa deycyzyjne są skuteczne w przewidywaniu demencji, ale najlepiej w tej sytuacji wypada Random Forest.
     - Cechy takie jak `MMSE`, `eTIV`, i `nWBV` są kluczowe dla diagnostyki demencji.
     """)
 
