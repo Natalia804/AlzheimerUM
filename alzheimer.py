@@ -19,8 +19,7 @@ st.sidebar.title("Nawigacja")
 sections = ["Wprowadzenie", "Charakterystyka zbioru danych", "Usuwanie braków i analiza outlierów", "Dzielenie na zbiór uczący i testowy", "Metody uczenia maszynowego", "Podsumowanie i wnioski"]
 selected_section = st.sidebar.radio("Przejdź do sekcji:", sections)
 
-# Load the data
-data_path = 'alzheimer_features.csv'  # Update this with the actual path if running locally
+data_path = 'alzheimer_features.csv'  
 data = pd.read_csv(data_path)
 data = data.drop(columns=['CDR'])
 
@@ -386,13 +385,13 @@ elif selected_section == "Dzielenie na zbiór uczący i testowy":
   
 
   
-    # Zachowaj kolumnę 'is_demented' osobno
+    # Zachowanie kolumnę 'is_demented' osobno
     is_male = X['is_male']
 
-    # Wybierz zmienne numeryczne, pomijając 'is_demented'
+    # Zmienne numeryczne, pomijając 'is_demented'
     numerical_columns = X.select_dtypes(include=['float64', 'int64']).columns.drop('is_male')
 
-    # Sprawdź, czy są zmienne numeryczne do standaryzacji
+    # Sprawdzenie, czy są zmienne numeryczne do standaryzacji
     if not numerical_columns.empty:
         scaler = StandardScaler()
         # Standaryzuj wybrane zmienne numeryczne
@@ -400,7 +399,7 @@ elif selected_section == "Dzielenie na zbiór uczący i testowy":
     else:
         st.warning("Brak zmiennych numerycznych do standaryzacji.")
 
-    # Dodaj z powrotem kolumnę 'is_demented' do DataFrame
+    # Dodanie z powrotem kolumnę 'is_demented' do DataFrame
     X['is_male'] = is_male
 
     # Wyświetlanie wyniku
@@ -711,7 +710,6 @@ elif selected_section == "Metody uczenia maszynowego":
     # Tworzenie obiektu SHAP Explainer
     # explainer = shap.TreeExplainer(chosen_model)
     explainer = shap.KernelExplainer(best_rf_model.predict, X_train)
-    # Obliczanie wartości SHAP
     shap_values = explainer.shap_values(X_test)
 
     # # Wykres force plot dla pierwszego przykładu
@@ -728,9 +726,9 @@ elif selected_section == "Metody uczenia maszynowego":
 
     plt.clf() 
     shap.summary_plot(
-        shap_values,      # shape (n_samples, n_features) = (75, 6)
+        shap_values,     
         X_test,
-        feature_names=X_test.columns,  # optional
+        feature_names=X_test.columns,  
         show=False
     )
     st.pyplot(plt.gcf())
