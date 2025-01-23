@@ -553,6 +553,10 @@ elif selected_section == "Metody uczenia maszynowego":
     svm_sensitivity = recall_score(y_test, y_pred_svm)
     svm_f1 = f1_score(y_test, y_pred_svm)
 
+     # Wyświetlanie wyników
+    st.write("Najlepsze parametry dla SVM:")
+    st.write(grid_search_svm.best_params_)
+
    
     # Macierz konfuzji
     st.subheader("Macierz konfuzji dla SVM")
@@ -602,7 +606,10 @@ elif selected_section == "Metody uczenia maszynowego":
     rf_precision = precision_score(y_test, y_pred_rf)
     rf_sensitivity = recall_score(y_test, y_pred_rf)
     rf_f1 = f1_score(y_test, y_pred_rf)
-    
+
+    # Wyświetlanie wyników
+    st.write("Najlepsze parametry dla Random Forest:")
+    st.write(grid_search_rf.best_params_)
     
 
     # Macierz konfuzji
